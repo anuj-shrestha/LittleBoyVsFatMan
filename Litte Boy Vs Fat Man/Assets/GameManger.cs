@@ -6,6 +6,7 @@ public class GameManger : MonoBehaviour
     public GameObject bg;
     public int bgPool = 3;
     List<GameObject> bgs;
+    public GameObject gameOverUI;
 
     void Start()
     {
@@ -34,5 +35,9 @@ public class GameManger : MonoBehaviour
         }
     }
 
+    public void EndGame()
+    {
+        gameOverUI.SetActive(true); 
+    }
 
 }

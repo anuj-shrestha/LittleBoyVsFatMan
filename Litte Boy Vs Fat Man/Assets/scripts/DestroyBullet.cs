@@ -7,6 +7,14 @@ public class DestroyBullet : MonoBehaviour
         Invoke("Destroy", 2f);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Destroy();
+        }
+    }
+
     private void Destroy()
     {
         gameObject.SetActive(false);
