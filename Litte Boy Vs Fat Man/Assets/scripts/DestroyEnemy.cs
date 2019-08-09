@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
-    int collisionCount = 0;
+    int health = 2;
     private void OnEnable()
     {
         Invoke("Destroy", 5f);
@@ -12,7 +12,7 @@ public class DestroyEnemy : MonoBehaviour
 
     private void Destroy()
     {
-        collisionCount = 0;
+        health = 2;
         gameObject.SetActive(false);
     }
 
@@ -21,14 +21,22 @@ public class DestroyEnemy : MonoBehaviour
         CancelInvoke();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collisionCount > 10)
+
+        if (other.tag == "Player")
         {
             Destroy();
-        } else
+        }
+
+        if (other.tag == "Bullet")
         {
-            collisionCount++;
+            health--;
+
+            if (health < 1)
+            {
+                Destroy();
+            }
         }
     }
 }
