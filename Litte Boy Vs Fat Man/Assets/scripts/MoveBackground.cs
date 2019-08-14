@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class MoveBackground : MonoBehaviour
 {
-    public float BGMoveSpeed = 1f;
+    public float BGMoveSpeed = 0.5f;
     SpriteRenderer m_SpriteRenderer;
     float imgHeight;
     private void Start()
@@ -14,7 +14,7 @@ public class MoveBackground : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(-BGMoveSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(-BGMoveSpeed * Time.fixedDeltaTime, 0, 0);
         if (transform.position.y <= -imgHeight)
         {
             Reset();

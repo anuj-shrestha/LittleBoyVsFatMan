@@ -1,11 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class DestroyPlayer : MonoBehaviour
 {
     public int health = 5;
+    Text healthText;
+
+    private void Start()
+    {
+        healthText = GameObject.Find("PlayerHealthText").GetComponent<Text>();
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -14,6 +19,8 @@ public class DestroyPlayer : MonoBehaviour
         {
             Destroy();
         }
+
+        healthText.text = "[[ Player Health: " + health + " ]]";
     }
     void Destroy()
     {
@@ -30,12 +37,5 @@ public class DestroyPlayer : MonoBehaviour
         {
             Destroy();
         }   
-    }
-
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(20, 20, 250, 120));
-        GUILayout.Label("[[ Player Health: " + health + " ]]");
-        GUILayout.EndArea();
     }
 }

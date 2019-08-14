@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7006519982027288894}
   - component: {fileID: 7006519982027288895}
   - component: {fileID: 7006519982027288893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sea2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,4 +92,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee78e9c822ab8c4f9f3c49d8884d0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMoveSpeed: 1
+  BGMoveSpeed: 0.5

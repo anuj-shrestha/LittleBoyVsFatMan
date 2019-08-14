@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class EnemyPattern : MonoBehaviour
+public class EnemyPattern : ScriptableObject
 {
+    
     public int patternNo;
     public int GetPatternNo()
     {

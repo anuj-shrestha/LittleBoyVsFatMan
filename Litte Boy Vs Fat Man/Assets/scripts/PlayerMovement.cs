@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform player;
     public Rigidbody rb;
     public float moveSpeed = 2000f;
+    public float playerOffsetY = 2f;
 
     void Start()
     {
@@ -49,6 +50,6 @@ public class PlayerMovement : MonoBehaviour
         //player.position = new Vector3(point.x, point.y, 1);
         Vector2 direction = (point - player.position).normalized;
 
-        rb.velocity = new Vector3(direction.x * moveSpeed * Time.deltaTime, direction.y * moveSpeed * Time.deltaTime, 0);
+        rb.velocity = new Vector3(direction.x * moveSpeed * Time.fixedDeltaTime, direction.y * moveSpeed * Time.deltaTime + playerOffsetY, 0);
     }
 }
