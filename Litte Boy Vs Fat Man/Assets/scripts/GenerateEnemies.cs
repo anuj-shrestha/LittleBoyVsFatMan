@@ -28,7 +28,7 @@ public class GenerateEnemies : MonoBehaviour
     {
         int PatternNo = Random.Range(0, 9);
         var pattern = GetEnemyPattern(PatternNo);
-        Debug.Log("pattern" + PatternNo);
+
         for (int i = 0; i < enemies.Count; i++)
         {
             if (!enemies[i].activeInHierarchy)
@@ -42,7 +42,7 @@ public class GenerateEnemies : MonoBehaviour
 
     EnemyPattern GetEnemyPattern(int ptNo)
     {
-        var pattern = ScriptableObject.CreateInstance<EnemyPattern>() ;
+        var pattern = ScriptableObject.CreateInstance<EnemyPattern>();
 
         switch (ptNo)
         {
