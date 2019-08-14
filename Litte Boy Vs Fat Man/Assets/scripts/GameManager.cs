@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public GameObject bg;
     public int bgPool = 3;

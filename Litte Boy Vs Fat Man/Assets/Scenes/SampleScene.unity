@@ -282,6 +282,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 773350775856324271, guid: b6e517709f8e9e343a3210ca55199355,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 773350775856324265, guid: b6e517709f8e9e343a3210ca55199355,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -342,6 +347,16 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 773350775856324264, guid: b6e517709f8e9e343a3210ca55199355,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1673045303
+      objectReference: {fileID: 0}
+    - target: {fileID: 773350775856324264, guid: b6e517709f8e9e343a3210ca55199355,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e517709f8e9e343a3210ca55199355, type: 3}
 --- !u!224 &1371751980 stripped
@@ -362,7 +377,7 @@ GameObject:
   - component: {fileID: 1454821580}
   - component: {fileID: 1454821582}
   m_Layer: 0
-  m_Name: GameManger
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ffa4f8dd058f04785a4a3262bad633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generateRate: 4
+  generateRate: 10
   enemy: {fileID: 5470570421997046324, guid: ebd1de65f63e63d448e248aab203bb7c, type: 3}
   enemyPoolAmount: 5
 --- !u!1 &1518988860 stripped
@@ -575,7 +590,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1805104779
+  m_SortingLayerID: 1353798005
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1788601769

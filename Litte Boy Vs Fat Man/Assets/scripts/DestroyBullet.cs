@@ -2,9 +2,9 @@
 
 public class DestroyBullet : MonoBehaviour
 {
-    private void OnEnable()
+    private void OnBecameInvisible()
     {
-        Invoke("Destroy", 2f);
+        Destroy();
     }
 
     private void OnTriggerEnter(Collider other)

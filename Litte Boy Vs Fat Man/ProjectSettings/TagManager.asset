@@ -18,8 +18,8 @@ TagManager:
   - 
   - Background
   - Healthbar
-  - 
-  - 
+  - Bulltets
+  - Player
   - 
   - 
   - 
@@ -45,8 +45,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 969491955
+    uniqueID: 2767133811
+    locked: 0
+  - name: Bullets
+    uniqueID: 2539719271
+    locked: 0
+  - name: Enemy
+    uniqueID: 3645469405
+    locked: 0
+  - name: Player
+    uniqueID: 2621921993
     locked: 0
   - name: Healthbar
-    uniqueID: 2489862517
+    uniqueID: 1353798005
     locked: 0

@@ -2,7 +2,7 @@
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float enemySpeed = 5f;
+    public float enemySpeed = 2f;
 
 
     // Update is called once per frame

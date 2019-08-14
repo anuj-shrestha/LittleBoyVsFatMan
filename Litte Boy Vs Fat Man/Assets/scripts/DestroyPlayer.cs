@@ -22,9 +22,10 @@ public class DestroyPlayer : MonoBehaviour
 
         healthText.text = "[[ Player Health: " + health + " ]]";
     }
+
     void Destroy()
     {
-        FindObjectOfType<GameManger>().EndGame();
+        FindObjectOfType<GameManager>().EndGame();
     }
 
     private void OnTriggerEnter(Collider other)

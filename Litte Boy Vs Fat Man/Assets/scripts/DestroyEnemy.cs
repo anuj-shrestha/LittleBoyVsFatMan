@@ -5,9 +5,10 @@ using UnityEngine;
 public class DestroyEnemy : MonoBehaviour
 {
     int health = 2;
-    private void OnEnable()
+
+    private void OnBecameInvisible()
     {
-        Invoke("Destroy", 5f);
+        Destroy();
     }
 
     private void Destroy()

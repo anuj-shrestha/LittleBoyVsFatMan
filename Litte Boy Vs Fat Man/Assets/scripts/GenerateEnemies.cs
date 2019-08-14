@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public float generateRate = 4f;
+    public float generateRate = 10f;
     public GameObject enemy;
     public int enemyPoolAmount = 8;
     List<GameObject> enemies;
@@ -28,7 +28,7 @@ public class GenerateEnemies : MonoBehaviour
     {
         int PatternNo = Random.Range(0, 9);
         var pattern = GetEnemyPattern(PatternNo);
-
+        Debug.Log("pattern" + PatternNo);
         for (int i = 0; i < enemies.Count; i++)
         {
             if (!enemies[i].activeInHierarchy)
@@ -67,36 +67,48 @@ public class GenerateEnemies : MonoBehaviour
                     pattern.increment = new Vector3(0, 1, 0);
                     break;
                 }
-            //case 3:
-            //    {
-            //        pattern = new EnemyPattern { patternNo = ptNo, initPos = new Vector3(2, 10, -1), increment = new Vector3(0, 1, 0) };
-            //        break;
-            //    }
-            //case 4:
-            //    {
-            //        pattern = new EnemyPattern { patternNo = ptNo, initPos = new Vector3(-2, 10, -1), increment = new Vector3(0, 1, 0) };
-            //        break;
-            //    }
-            //case 5:
-            //    {
-            //        pattern = new EnemyPattern { patternNo = ptNo, initPos = new Vector3(3, 10, -1), increment = new Vector3(-0.3f, 1, 0) };
-            //        break;
-            //    }
-            //case 6:
-            //    {
-            //        pattern = new EnemyPattern { patternNo = ptNo, initPos = new Vector3(-3, 10, -1), increment = new Vector3(0.3f, 1, 0) };
-            //        break;
-            //    }
-            //case 7:
-            //    {
-            //        pattern = new EnemyPattern { patternNo = ptNo, initPos = new Vector3(4, 10, -1), increment = new Vector3(0, 1, 0) };
-            //        break;
-            //    }
-            //case 8:
-            //    {
-            //        pattern = new EnemyPattern { patternNo = ptNo, initPos = new Vector3(-4, 10, -1), increment = new Vector3(0, 1, 0) };
-            //        break;
-            //    }
+            case 3:
+                {
+                    pattern.patternNo = ptNo;
+                    pattern.initPos = new Vector3(2, 10, -1);
+                    pattern.increment = new Vector3(0, 1, 0);
+                    break;
+                }
+            case 4:
+                {
+                    pattern.patternNo = ptNo;
+                    pattern.initPos = new Vector3(-2, 10, -1);
+                    pattern.increment = new Vector3(0, 1, 0);
+                    break;
+                }
+            case 5:
+                {
+                    pattern.patternNo = ptNo;
+                    pattern.initPos = new Vector3(3, 10, -1);
+                    pattern.increment = new Vector3(-0.2f, 1, 0);
+                    break;
+                }
+            case 6:
+                {
+                    pattern.patternNo = ptNo;
+                    pattern.initPos = new Vector3(-3, 10, -1);
+                    pattern.increment = new Vector3(0.2f, 1, 0);
+                    break;
+                }
+            case 7:
+                {
+                    pattern.patternNo = ptNo;
+                    pattern.initPos = new Vector3(3, 10, -1);
+                    pattern.increment = new Vector3(-0.4f, 1, 0);
+                    break;
+                }
+            case 8:
+                {
+                    pattern.patternNo = ptNo;
+                    pattern.initPos = new Vector3(-3, 10, -1);
+                    pattern.increment = new Vector3(0.4f, 1, 0);
+                    break;
+                }
             default:
                 {
                     pattern.patternNo = ptNo;
