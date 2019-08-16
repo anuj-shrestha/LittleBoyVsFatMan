@@ -26,7 +26,7 @@ public class GenerateEnemies : MonoBehaviour
 
     void SpawnEnemyInGroup()
     {
-        int PatternNo = Random.Range(0, 9);
+        int PatternNo = Random.Range(0, 6);
         var pattern = GetEnemyPattern(PatternNo);
 
         for (int i = 0; i < enemies.Count; i++)
@@ -70,42 +70,42 @@ public class GenerateEnemies : MonoBehaviour
             case 3:
                 {
                     pattern.patternNo = ptNo;
-                    pattern.initPos = new Vector3(2, 10, -1);
+                    pattern.initPos = new Vector3(1.5f, 10, -1);
                     pattern.increment = new Vector3(0, 1, 0);
                     break;
                 }
             case 4:
                 {
                     pattern.patternNo = ptNo;
-                    pattern.initPos = new Vector3(-2, 10, -1);
+                    pattern.initPos = new Vector3(-1.5f, 10, -1);
                     pattern.increment = new Vector3(0, 1, 0);
                     break;
                 }
             case 5:
                 {
                     pattern.patternNo = ptNo;
-                    pattern.initPos = new Vector3(3, 10, -1);
+                    pattern.initPos = new Vector3(2f, 10, -1);
                     pattern.increment = new Vector3(-0.2f, 1, 0);
                     break;
                 }
             case 6:
                 {
                     pattern.patternNo = ptNo;
-                    pattern.initPos = new Vector3(-3, 10, -1);
+                    pattern.initPos = new Vector3(-2f, 10, -1);
                     pattern.increment = new Vector3(0.2f, 1, 0);
                     break;
                 }
             case 7:
                 {
                     pattern.patternNo = ptNo;
-                    pattern.initPos = new Vector3(3, 10, -1);
+                    pattern.initPos = new Vector3(2f, 10, -1);
                     pattern.increment = new Vector3(-0.4f, 1, 0);
                     break;
                 }
             case 8:
                 {
                     pattern.patternNo = ptNo;
-                    pattern.initPos = new Vector3(-3, 10, -1);
+                    pattern.initPos = new Vector3(-2f, 10, -1);
                     pattern.increment = new Vector3(0.4f, 1, 0);
                     break;
                 }

@@ -8,32 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public float moveSpeed = 2000f;
     public float playerOffsetY = 2f;
+    Vector3 point;
+    Vector2 mousePos;
 
     void Start()
     {
         cam = Camera.main;
+        Vector3 point = player.position;
+        Vector2 mousePos = player.position;
     }
-
-    //void OnGUI()
-    //{
-    //    Vector3 point = new Vector3();
-    //    Event currentEvent = Event.current;
-    //    Vector2 mousePos = new Vector2();
-
-    //    // Get the mouse position from Event.
-    //    // Note that the y position from Event is inverted.
-    //    mousePos.x = currentEvent.mousePosition.x;
-    //    mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
-
-    //    point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
-
-    //    GUILayout.BeginArea(new Rect(20, 20, 250, 120));
-    //    GUILayout.Label("Screen pixels: " + cam.pixelWidth + ":" + cam.pixelHeight);
-    //    GUILayout.Label("Mouse position: " + mousePos);
-    //    GUILayout.Label("World position: " + point.ToString("F3"));
-    //    GUILayout.Label("Player positin: " + player.position);
-    //    GUILayout.EndArea();
-    //}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -43,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Get the mouse position from Event.
         // Note that the y position from Event is inverted.
+     
         mousePos.x = Input.mousePosition.x;
         mousePos.y = Input.mousePosition.y;
 
