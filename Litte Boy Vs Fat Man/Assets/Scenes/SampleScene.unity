@@ -437,9 +437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ffa4f8dd058f04785a4a3262bad633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generateRate: 10
+  generateRate: 3
   enemy: {fileID: 5470570421997046324, guid: ebd1de65f63e63d448e248aab203bb7c, type: 3}
-  enemyPoolAmount: 5
 --- !u!1 &1518988860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3007903692639970740, guid: 7ae0517d65a534d4ebfd3270a6cf886e,

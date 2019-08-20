@@ -8,6 +8,13 @@ public class GameManager : MonoBehaviour
     List<GameObject> bgs;
     public GameObject gameOverUI;
 
+    public static int enemiesDestroyed;
+
+    public int EnemiesDestroyed { get => enemiesDestroyed; set => enemiesDestroyed = value; }
+    public static float BulletSpeed { get => bulletSpeed; set => bulletSpeed = value; }
+
+    private static float bulletSpeed;
+
     void Start()
     {
         bgs = new List<GameObject>();
@@ -21,6 +28,7 @@ public class GameManager : MonoBehaviour
         }
 
         spawnBg();
+        bulletSpeed = 5f;
     }
 
     void spawnBg()

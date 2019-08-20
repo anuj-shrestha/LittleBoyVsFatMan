@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 public class GenerateBullets : MonoBehaviour
 {
-    public float fireRate = 0.1f;
+    public static float fireRate = 1f;
     public GameObject bullet;
     public int bulletPoolAmount = 5;
     List<GameObject> bullets;
+    float time = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,18 @@ public class GenerateBullets : MonoBehaviour
             bullets.Add(obj);
 
         }
-        InvokeRepeating("FireBullet", fireRate, fireRate);
+    }
+
+    private void FixedUpdate()
+    {
+        time += Time.fixedDeltaTime;
+
+        if (time > fireRate)
+        {
+            FireBullet();
+            time = 0;
+        }
+
     }
 
     void FireBullet()

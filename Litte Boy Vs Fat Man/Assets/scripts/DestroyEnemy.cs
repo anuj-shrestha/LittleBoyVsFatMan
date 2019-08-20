@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyEnemy : MonoBehaviour
 {
     int health = 2;
+    public GameObject powerUpPrefab;
 
     private void OnBecameInvisible()
     {
@@ -28,6 +29,8 @@ public class DestroyEnemy : MonoBehaviour
         if (other.tag == "Player")
         {
             Destroy();
+            GameManager.enemiesDestroyed++;
+
         }
 
         if (other.tag == "Bullet")
@@ -37,7 +40,23 @@ public class DestroyEnemy : MonoBehaviour
             if (health < 1)
             {
                 Destroy();
+                GameManager.enemiesDestroyed++;
             }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (GameManager.enemiesDestroyed >= GenerateEnemies.enemyPoolAmount)
+        {
+            GameManager.enemiesDestroyed = 0;
+            var newPowerUp = ScriptableObject.CreateInstance<PowerUp>();
+            newPowerUp.PowerUpType = "faster-bullet";
+
+            var prefab = Instantiate(powerUpPrefab);
+            newPowerUp.PowerupPrefab = prefab;
+
+            prefab.transform.position = transform.position;
         }
     }
 }

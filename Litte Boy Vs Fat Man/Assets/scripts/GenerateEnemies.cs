@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public float generateRate = 10f;
+    public float generateRate = 8f;
     public GameObject enemy;
-    public int enemyPoolAmount = 8;
+    public static int enemyPoolAmount = 5;
     List<GameObject> enemies;
+    int inactiveEnemies = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class GenerateEnemies : MonoBehaviour
             enemies.Add(obj);
 
         }
+
         InvokeRepeating("SpawnEnemyInGroup", 0, generateRate);
     }
 
@@ -33,10 +35,22 @@ public class GenerateEnemies : MonoBehaviour
         {
             if (!enemies[i].activeInHierarchy)
             {
-                enemies[i].transform.position = new Vector3(pattern.initPos.x, pattern.initPos.y + i, pattern.initPos.z);
-                //enemies[i].transform.rotation = transform.rotation;
-                enemies[i].SetActive(true);
+                inactiveEnemies++;
             }
+        }
+
+        if (inactiveEnemies >= 5)
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (!enemies[i].activeInHierarchy)
+                {
+                    enemies[i].transform.position = new Vector3(pattern.initPos.x, pattern.initPos.y + i, pattern.initPos.z);
+                    //enemies[i].transform.rotation = transform.rotation;
+                    enemies[i].SetActive(true);
+                }
+            }
+            inactiveEnemies = 0;
         }
     }
 

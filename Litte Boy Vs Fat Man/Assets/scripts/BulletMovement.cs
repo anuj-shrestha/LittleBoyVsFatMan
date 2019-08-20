@@ -4,11 +4,10 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     public Transform bullet;
-    public float bulletSpeed = 10f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(0, bulletSpeed * Time.deltaTime, 0);
+        transform.Translate(0, GameManager.BulletSpeed * Time.fixedDeltaTime, 0);
     }
 }
