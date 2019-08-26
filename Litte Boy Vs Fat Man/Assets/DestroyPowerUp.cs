@@ -14,12 +14,15 @@ public class DestroyPowerUp : MonoBehaviour
         if (other.tag == "Player")
         {
             Destroy();
-            GameManager.BulletSpeed += 1f;
-            GenerateBullets.fireRate -= 0.05f;
-            if (Random.Range(1,2) == 1) {
+            GameManager.BulletSpeed += 1.2f;
+            GenerateBullets.fireRate *= 0.9f;
+
+            int badLuck = Random.Range(1, 3);
+            if (badLuck >= 2) {
                 GenerateEnemies.enemyPoolAmount += 1;
-                EnemyMovement.enemySpeed += 0.2f;
             }
+            EnemyMovement.enemySpeed += 0.2f;
+            GenerateEnemies.generateRate -= 0.3f;
         }
     }
 

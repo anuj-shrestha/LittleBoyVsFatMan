@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class GameManager : MonoBehaviour
 
     public int EnemiesDestroyed { get => enemiesDestroyed; set => enemiesDestroyed = value; }
     public static float BulletSpeed { get => bulletSpeed; set => bulletSpeed = value; }
+    public static float PlayerMoney { get => playerMoney; set => playerMoney = value; }
 
     private static float bulletSpeed;
+
+    private static float playerMoney;
 
     void Start()
     {
@@ -28,7 +32,9 @@ public class GameManager : MonoBehaviour
         }
 
         spawnBg();
-        bulletSpeed = 5f;
+        bulletSpeed = 10f;
+        EnemyMovement.enemySpeed = 2f;
+        playerMoney = PlayerPrefs.GetFloat("PlayerMoney");
     }
 
     void spawnBg()
@@ -45,7 +51,18 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        gameOverUI.SetActive(true); 
+        gameOverUI.SetActive(true);
+        PlayerPrefs.SetFloat("PlayerMoney", playerMoney);
     }
 
+    private void FixedUpdate()
+    {
+        var moneyTxt = GameObject.Find("PlayerMoney").GetComponent<Text>();
+        moneyTxt.text = "$: " + ((int) playerMoney).ToString();
+    }
+
+    public static void AddPlayerMoney(float sum)
+    {
+        playerMoney += sum;
+    }
 }

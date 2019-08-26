@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public float generateRate = 8f;
+    public static float generateRate = 4f;
     public GameObject enemy;
-    public static int enemyPoolAmount = 5;
+    public static int enemyPoolAmount = 4;
     List<GameObject> enemies;
-    int inactiveEnemies = 0;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         enemies = new List<GameObject>();
+        enemyPoolAmount = 4;
+        generateRate = 4f;
 
-        for (int i = 0; i < enemyPoolAmount; i++)
+        for (int i = 0; i < enemyPoolAmount * 4; i++)
         {
             GameObject obj = (GameObject)Instantiate(enemy);
             obj.SetActive(false);
@@ -30,27 +31,17 @@ public class GenerateEnemies : MonoBehaviour
     {
         int PatternNo = Random.Range(0, 6);
         var pattern = GetEnemyPattern(PatternNo);
+        int active = 0;
 
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (!enemies[i].activeInHierarchy)
+            if (!enemies[i].activeInHierarchy && active < enemyPoolAmount)
             {
-                inactiveEnemies++;
+                enemies[i].transform.position = new Vector3(pattern.initPos.x, pattern.initPos.y + active, pattern.initPos.z);
+                //enemies[i].transform.rotation = transform.rotation;
+                enemies[i].SetActive(true);
+                active++;
             }
-        }
-
-        if (inactiveEnemies >= 5)
-        {
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                if (!enemies[i].activeInHierarchy)
-                {
-                    enemies[i].transform.position = new Vector3(pattern.initPos.x, pattern.initPos.y + i, pattern.initPos.z);
-                    //enemies[i].transform.rotation = transform.rotation;
-                    enemies[i].SetActive(true);
-                }
-            }
-            inactiveEnemies = 0;
         }
     }
 

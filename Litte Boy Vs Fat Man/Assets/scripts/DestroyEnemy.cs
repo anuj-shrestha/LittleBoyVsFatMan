@@ -41,13 +41,14 @@ public class DestroyEnemy : MonoBehaviour
             {
                 Destroy();
                 GameManager.enemiesDestroyed++;
+                GameManager.AddPlayerMoney(50f);
             }
         }
     }
 
     private void FixedUpdate()
     {
-        if (GameManager.enemiesDestroyed >= GenerateEnemies.enemyPoolAmount)
+        if (GameManager.enemiesDestroyed >= GenerateEnemies.enemyPoolAmount/2)
         {
             GameManager.enemiesDestroyed = 0;
             var newPowerUp = ScriptableObject.CreateInstance<PowerUp>();
@@ -55,7 +56,7 @@ public class DestroyEnemy : MonoBehaviour
 
             var prefab = Instantiate(powerUpPrefab);
             newPowerUp.PowerupPrefab = prefab;
-
+            //Debug.Log("new pwrup at " + transform.position);
             prefab.transform.position = transform.position;
         }
     }

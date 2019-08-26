@@ -20,7 +20,7 @@ public class DestroyPlayer : MonoBehaviour
             Destroy();
         }
 
-        healthText.text = "[[ Player Health: " + health + " ]]";
+        healthText.text = "Health: " + health;
     }
 
     void Destroy()
