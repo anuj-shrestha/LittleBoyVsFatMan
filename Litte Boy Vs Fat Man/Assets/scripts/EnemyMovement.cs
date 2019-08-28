@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : NetworkBehaviour
 {
     public static float enemySpeed = 2f;
 

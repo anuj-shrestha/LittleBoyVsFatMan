@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {    
 
     private Camera cam;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main;
         Vector3 point = player.position;
         Vector2 mousePos = player.position;
+        Debug.Log("player pos" + point);
     }
 
     // Update is called once per frame

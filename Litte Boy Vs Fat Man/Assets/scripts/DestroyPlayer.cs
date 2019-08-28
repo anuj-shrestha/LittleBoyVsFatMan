@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class DestroyPlayer : MonoBehaviour
+public class DestroyPlayer : NetworkBehaviour
 {
+    [SyncVar]
     public int health = 5;
     Text healthText;
 

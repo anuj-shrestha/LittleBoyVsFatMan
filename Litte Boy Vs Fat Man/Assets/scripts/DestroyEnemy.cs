@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class DestroyEnemy : MonoBehaviour
+public class DestroyEnemy : NetworkBehaviour
 {
     int health = 2;
     public GameObject powerUpPrefab;
@@ -22,6 +23,7 @@ public class DestroyEnemy : MonoBehaviour
     {
         CancelInvoke();
     }
+
 
     private void OnTriggerEnter(Collider other)
     {

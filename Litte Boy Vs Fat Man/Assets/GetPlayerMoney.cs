@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class GetPlayerMoney : MonoBehaviour
+public class GetPlayerMoney : NetworkBehaviour
 {
     // Start is called before the first frame update
     void Start()

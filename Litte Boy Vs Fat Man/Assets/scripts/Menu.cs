@@ -7,4 +7,9 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void ShowMultiplayerMenu()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

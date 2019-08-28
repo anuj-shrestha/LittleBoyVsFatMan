@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class DestroyBullet : MonoBehaviour
+public class DestroyBullet : NetworkBehaviour
 {
     private void OnBecameInvisible()
     {

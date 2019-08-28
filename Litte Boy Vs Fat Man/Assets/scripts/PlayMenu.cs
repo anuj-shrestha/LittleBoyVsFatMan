@@ -24,4 +24,9 @@ public class PlayMenu : MonoBehaviour
         var moneyTxt = GameObject.Find("PlayerMoney").GetComponent<Text>();
         moneyTxt.text = "$: " + ((int)PlayerPrefs.GetFloat("PlayerMoney")).ToString();
     }
+
+    public void ShowMultiplayerMenu()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

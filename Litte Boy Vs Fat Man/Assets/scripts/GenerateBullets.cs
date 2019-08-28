@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
-public class GenerateBullets : MonoBehaviour
+public class GenerateBullets : NetworkBehaviour
 {
     public static float fireRate = 1f;
     public GameObject bullet;

@@ -1,7 +1,8 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class BulletMovement : MonoBehaviour
+public class BulletMovement : NetworkBehaviour
 {
     public Transform bullet;
 

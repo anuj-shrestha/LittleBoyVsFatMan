@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GenerateEnemies : MonoBehaviour
+public class GenerateEnemies : NetworkBehaviour
 {
     public static float generateRate = 4f;
     public GameObject enemy;
@@ -20,6 +21,7 @@ public class GenerateEnemies : MonoBehaviour
         {
             GameObject obj = (GameObject)Instantiate(enemy);
             obj.SetActive(false);
+            NetworkServer.Spawn(obj);
             enemies.Add(obj);
 
         }

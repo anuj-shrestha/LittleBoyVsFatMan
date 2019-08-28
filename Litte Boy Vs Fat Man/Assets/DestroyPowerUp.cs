@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class DestroyPowerUp : MonoBehaviour
+public class DestroyPowerUp : NetworkBehaviour
 {
     private void OnBecameInvisible()
     {
